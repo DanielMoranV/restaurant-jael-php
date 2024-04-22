@@ -11,5 +11,8 @@ Route::get('/login', function () {
 Route::get('/dashboard', function () {
     echo 'pagina login';
 });
+Route::get('/login/:slug', function () {
+    echo 'pagina login';
+});
 
 Route::dispatch();
