@@ -30,9 +30,9 @@ class Route
             if (strpos($route, ":") != false) {
                 $route = preg_replace('#:[a-zA-Z]+#', '([a-zA-z]+)', $route);
             }
-            if (preg_match("#^$route$#", $uri, $params)) {
+            if (preg_match("#^$route$#", $uri, $matches)) {
 
-                $params = array_slice($params, 1);
+                $params = array_slice($matches, 1);
                 if (is_callable($callback)) {
 
                     $response =  $callback(...$params);

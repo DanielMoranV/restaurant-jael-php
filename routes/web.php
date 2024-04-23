@@ -10,8 +10,8 @@ Route::get('/login', function () {
 Route::get('/dashboard', function () {
     return 'pagina login';
 });
-Route::get('/login/:slug', function ($slug) {
-    return 'pagina login ' . $slug;
+Route::get('/login/:slug/:name', function ($slug, $name) {
+    return 'pagina login ' . $slug . $name;
 });
 
 Route::dispatch();

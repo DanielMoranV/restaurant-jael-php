@@ -5,15 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Jael | Login</title>
-    <link rel="stylesheet" href="../css/login.css">
-    <script src="../js/login.js" defer></script>
+    <link rel="stylesheet" href="./css/login.css">
+    <script src="./js/login.js" defer></script>
     <!--Bootsrap 4 CDN-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <!--Fontawesome CDN-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
@@ -23,7 +21,8 @@
 <body>
     <?php
     // login.php
-
+    $ruta_actual = $_SERVER['DOCUMENT_ROOT'];
+    echo "La ruta actual es: $ruta_actual";
     session_start();
 
     // Verificar si hay un mensaje de sesión
@@ -44,8 +43,7 @@
                 <div class="card-header">
                     <h3>Iniciar Sesión</h3>
                     <div class="d-flex justify-content-end social_icon">
-                        <span><img src="/img/logochef.png" id="icon" alt="User Icon" class=" img-thumbnail"
-                                style="width: 100px; height: 100px;" /></span>
+                        <span><img src="/img/logochef.png" id="icon" alt="User Icon" class=" img-thumbnail" style="width: 100px; height: 100px;" /></span>
                     </div>
                 </div>
                 <div class="card-body">
@@ -61,8 +59,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" name="password" id="passwordInput" class="form-control"
-                                placeholder="Password">
+                            <input type="password" name="password" id="passwordInput" class="form-control" placeholder="Password">
                         </div>
                         <div class="row align-items-center remember">
                             <input type="checkbox" id="showPassword"> Mostrar Contraseña
