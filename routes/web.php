@@ -1,18 +1,17 @@
 <?php
 
 use Lib\Route;
+use App\Controllers\LoginController;
 
-Route::get('/', function () {
-    echo 'pagina inicio';
-});
+Route::get('/', [LoginController::class, 'login']);
 Route::get('/login', function () {
-    echo 'pagina login';
+    return 'pagina login';
 });
 Route::get('/dashboard', function () {
-    echo 'pagina login';
+    return 'pagina login';
 });
-Route::get('/login/:slug', function () {
-    echo 'pagina login';
+Route::get('/login/:slug', function ($slug) {
+    return 'pagina login ' . $slug;
 });
 
 Route::dispatch();

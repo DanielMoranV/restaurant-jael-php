@@ -28,18 +28,28 @@ class Route
         foreach (self::$routes[$method] as $route => $callback) {
 
             if (strpos($route, ":") != false) {
-                $route = preg_replace('#:[a-zA-Z]+#', '[a-zA-z]+', $route);
-                echo $route;
-                return;
+                $route = preg_replace('#:[a-zA-Z]+#', '([a-zA-z]+)', $route);
             }
             if (preg_match("#^$route$#", $uri, $params)) {
-                $callback();
+
+                $params = array_slice($params, 1);
+                if (is_callable($callback)) {
+
+                    $response =  $callback(...$params);
+                }
+                if (is_array($callback)) {
+                    $controller = new $callback[0];
+                    $response = $controller->{$callback[1]}(...$params);
+                }
+
+                if (is_array($response)) {
+                    echo json_encode(($response));
+                } else {
+                    echo $response;
+                }
+
                 return;
             }
-            // if ($route == $uri) {
-            //     $callback();
-            //     return;
-            // }
         }
         echo '404 Not Found';
     }
