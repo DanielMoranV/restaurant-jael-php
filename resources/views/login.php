@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+<?php
+$ruta_actual = $_SERVER['DOCUMENT_ROOT'];
+echo "La ruta actual es: $ruta_actual";
+?>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Jael | Login</title>
+    <title><?= $title ?></title>
     <link rel="stylesheet" href="./css/login.css">
     <script src="./js/login.js" defer></script>
     <!--Bootsrap 4 CDN-->
@@ -21,8 +25,7 @@
 <body>
     <?php
     // login.php
-    $ruta_actual = $_SERVER['DOCUMENT_ROOT'];
-    echo "La ruta actual es: $ruta_actual";
+
     session_start();
 
     // Verificar si hay un mensaje de sesión
