@@ -38,12 +38,12 @@ INSERT INTO cliente (
         photo_profile_url
     )
 VALUES (
-        'Juan Pérez',
-        '12345678',
+        'Daniel Moran',
+        '70315050',
         'DNI',
         '987654321',
         'Calle 123',
-        'juan@example.com',
+        'daniel@example.com',
         'url_de_la_foto'
     ),
     (
@@ -71,10 +71,10 @@ INSERT INTO collaborators (
         photo_profile_url
     )
 VALUES (
-        'Luis',
-        'González',
+        'Daniel',
+        'Moran Vilchez',
         'DNI',
-        '11111111',
+        '70315050',
         '987654321',
         'luis@example.com',
         'Calle 123',
@@ -118,7 +118,7 @@ VALUES ('2024-04-22 12:00:00', 1, 1, 1, 50.00),
     ('2024-04-22 13:00:00', 2, 2, 2, 30.00);
 -- Insertar acceso
 INSERT INTO access (username, password, id_collaborator, id_role)
-VALUES ('11111111', 'contraseña', 1, 1),
+VALUES ('70315050', 'admin', 1, 1),
     ('22222222', 'contraseña', 2, 2);
 -- Insertar detalles de órdenes
 INSERT INTO order_detail (id_order, id_product, quantity)
